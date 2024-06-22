@@ -1,35 +1,44 @@
 package com.gabrielbarrilli.auction.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
+@Table(name = "auction")
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Auction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "auction_id")
+    private Long id;
 
-    private LocalDateTime date;
+    @Column(name = "auction_property_id")
+    private Long propertyId;
 
-    private String initialbid;
+    @Column(name = "auction_date")
+    private Date auctionDate;
 
-    private String finalbid;
+    @Column(name = "auction_auctiontype_id")
+    private Long auctionTypeId;
 
-    private String cod;
+    @Column(name = "auction_initialbid")
+    private Double initialBid;
 
-    @ManyToOne
-    private Proprieties proprietiesId;
+    @Column(name = "auction_finalbid")
+    private Double finalBid;
 
-    @ManyToOne
-    private Auction_Type auctionTypeId;
+    @Column(name = "auction_assessedvalue")
+    private Double assessedValue;
+
+    @Column(name = "auction_casenumber")
+    private String caseNumber;
+
+    @Column(name = "auction_saledate")
+    private Date saleDate;
 }

@@ -6,19 +6,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
+
 @Entity
-@Table(name = "condado")
+@Table(name = "propertysale")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Condado {
+public class PropertySale {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "condado_id")
+    @Column(name = "property_sale_id")
     private Long id;
 
-    @Column(name = "condado_descricao")
-    private String description;
+    @ManyToOne
+    private Property propertyId;
+
+    @Column(name = "property_sale_amount")
+    private Double amount;
+
+    @Column(name = "property_sale_date")
+    private Date saleDate;
 }

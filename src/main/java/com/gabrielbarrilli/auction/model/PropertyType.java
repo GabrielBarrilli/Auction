@@ -1,23 +1,24 @@
 package com.gabrielbarrilli.auction.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Table(name = "property_type")
 @Getter
 @Setter
-@NoArgsConstructor @AllArgsConstructor
-public class Proprieties_Type {
+@NoArgsConstructor
+@AllArgsConstructor
+public class PropertyType {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name = "propertytype_id")
+    private Long id;
 
+    @Column(name = "propertytype_descricao")
     private String descricao;
 }

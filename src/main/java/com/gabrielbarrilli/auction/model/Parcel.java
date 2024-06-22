@@ -7,18 +7,22 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "condado")
+@Table(name = "parcel")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Condado {
+public class Parcel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "condado_id")
+    @Column(name = "parcel_id")
     private Long id;
 
-    @Column(name = "condado_descricao")
+    @Column(name = "parcel_number")
+    private String number;
+
+    @Column(name = "parcel_description")
     private String description;
+
 }

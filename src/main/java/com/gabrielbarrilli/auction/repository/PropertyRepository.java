@@ -1,10 +1,9 @@
 package com.gabrielbarrilli.auction.repository;
 
-import com.gabrielbarrilli.auction.model.Auction;
+import com.gabrielbarrilli.auction.model.Property;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AuctionRepository extends JpaRepository<Auction, Long> {
+public interface PropertyRepository extends JpaRepository<Property, Long> {
 }
-
